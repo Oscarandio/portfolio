@@ -1,0 +1,198 @@
+//Variables
+
+$background-color: #2D333B;
+$text-color: #CDD7E0;
+
+// Estilos generales
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Open Sans;
+}
+
+// Header
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 10px;
+}
+
+// Grid layout
+
+.container {
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 25px;
+  margin: 50px 20px 0 0;
+
+}
+
+// Menu navegación
+
+nav {
+  border-right: 1px solid $text-color;
+  padding: 0 15px;
+}
+
+ul {
+  li {
+    list-style: none;
+    padding: 15px 0;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 20px;
+
+      &:hover {
+        background-color: rgba(205, 215, 224, 0.1);
+        border-radius: 2em;
+      }
+    }
+  }
+}
+
+// Contenido
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+// Conocimientos
+
+.conocimientos {
+  text-align: center;
+}
+
+// Imagenes
+
+
+.picture img {
+
+  border-radius: 1em;
+  margin: .5em;
+  width: 250px;
+  height: 150px;;
+
+
+  &:hover {
+    content: "";
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+}
+
+// Enlaces
+
+a {
+  text-decoration: none;
+  color: #3f7cca;
+
+}
+
+// Formulario
+
+form {
+  margin: 0 -30px;
+}
+
+label {
+
+  font-weight: bold;
+  font: 1em monospace, sans-serif;
+
+}
+
+input, textarea {
+
+  font: 1em monospace, sans-serif;
+  width: 250px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 0 8px;
+  margin-top: 10px;
+
+}
+
+textarea {
+
+  padding: 8px;
+  vertical-align: top;
+  height: 15em;
+}
+
+.button {
+ text-align: right;
+}
+
+button {
+  
+  padding: 15px 20px;
+  background-color: #ddd;
+  border: none;
+
+  &:hover {
+    background-color: #aaa;
+    cursor: pointer;
+  }
+}
+
+//Estilos para Desktop
+
+@media screen and (min-width: 1024px) {
+
+  body {
+    width: 1000px;
+    margin: auto;
+  }
+
+  // Header
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  //Tamaño del texto de menú
+
+  ul li a {
+    font-size: 1.4rem;
+  }
+
+  // Imagenes
+
+  .picture img {
+
+   width: 300px;
+   height: 183px;
+  }
+
+  // Ancho del formulario
+
+  input, textarea {
+
+    width: 685px;
+  
+  }
+
+}
