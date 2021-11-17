@@ -16,6 +16,7 @@ body {
   background-color: $background-color;
   color: $text-color;
   font-family: Open Sans;
+  
 }
 
 // Header
@@ -26,23 +27,25 @@ h1 {
   margin: 30px 10px;
 }
 
+h2 {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
 // Grid layout
 
 .container {
 
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-gap: 25px;
-  margin: 50px 20px 0 0;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
 
 }
 
 // Menu navegación
-
-nav {
-  border-right: 1px solid $text-color;
-  padding: 0 15px;
-}
 
 ul {
   li {
@@ -55,6 +58,8 @@ ul {
       font-weight: bold;
       font-size: 1rem;
       padding: 8px 20px;
+      display: none;
+
 
       &:hover {
         background-color: rgba(205, 215, 224, 0.1);
@@ -66,9 +71,10 @@ ul {
 
 // Contenido
 
-.contenido {
+.imagenes {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 
 }
 
@@ -76,29 +82,52 @@ ul {
 
 .conocimientos {
   text-align: center;
-}
-
-// Imagenes
-
-
-.picture img {
-
-  border-radius: 1em;
-  margin: .5em;
-  width: 250px;
-  height: 150px;;
-
-
-  &:hover {
-    content: "";
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.2);
-    opacity: 0.7;
-    transition: all 0.5s;
-    cursor: pointer;
+  img {
+    width: 50px;
+    height: 50px;
+    &:hover {
+        -webkit-transform: rotateY(180deg);
+        -webkit-transform-style: preserve-3d;
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+        transition: all 1.5s;
+    }
+    }
   }
 
+// Imagenes y efecto tarjeta
+
+figure {
+  margin: 0;
+  padding: 0;
+
+  img {
+
+    border-radius: 1em;
+    margin: .5em;
+    width: 190px;
+    height: 120px;
+  
+  
+    &:hover {
+      content: "";
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 0.7;
+      transition: all 0.5s;
+      cursor: pointer;
+      -webkit-transform:scale(1.1);
+      transform:scale(1.1);
+    }
+  
+  }
+
+}
+
+h3 {
+  font-size: 1em;
+  text-align: center;
 }
 
 // Enlaces
@@ -109,10 +138,31 @@ a {
 
 }
 
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+.enlace a{
+  padding: 10px;
+  background-color: #3f7cca;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+display:flex;
+justify-content: center;
+width: 98%;
+
+&:hover {
+  opacity: 0.9;
+}
+}
+
 // Formulario
 
 form {
   margin: 0 -30px;
+  display: none;
 }
 
 label {
@@ -122,7 +172,8 @@ label {
 
 }
 
-input, textarea {
+input,
+textarea {
 
   font: 1em monospace, sans-serif;
   width: 250px;
@@ -143,11 +194,11 @@ textarea {
 }
 
 .button {
- text-align: right;
+  text-align: right;
 }
 
 button {
-  
+
   padding: 15px 20px;
   background-color: #ddd;
   border: none;
@@ -167,6 +218,17 @@ button {
     margin: auto;
   }
 
+  .container {
+    grid-gap: 25px;
+
+  }
+
+  nav {
+    border-right: 1px solid $text-color;
+    padding: 0 15px;
+
+  }
+
   // Header
 
   h1 {
@@ -177,22 +239,45 @@ button {
 
   ul li a {
     font-size: 1.4rem;
+    display: block;
+    
+
+
   }
 
-  // Imagenes
+  // Conocimientos
 
-  .picture img {
+  .conocimientos {
+    img {
+      width: 70px;
+      height: 70px;
+      margin: 10px;
+    }
+  }
 
-   width: 300px;
-   height: 183px;
+  // Imagenes y efecto tarjeta
+
+  figure img {
+
+    width: 340px;
+    height: 200px;
+   
+  }
+
+  figcaption {
+
+    width: 300px;
+    height: 183px;
+   
   }
 
   // Ancho del formulario
 
-  input, textarea {
+  input,
+  textarea {
 
     width: 685px;
-  
+
   }
 
 }
